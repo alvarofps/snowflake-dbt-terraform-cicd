@@ -8,8 +8,8 @@ variable "env_name" {
   default = "STAGING"
 }
 
-variable "snowflake_private_key" {
-  type        = string
-  description = "Private key used to access Snowflake"
-  sensitive   = true
-}
+# variable "snowflake_private_key" {
+#   type        = string
+#   description = "Private key used to access Snowflake"
+#   sensitive   = true
+# }
