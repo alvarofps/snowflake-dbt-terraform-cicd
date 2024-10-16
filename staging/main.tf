@@ -21,7 +21,7 @@ provider "snowflake" {
   username = "alvarofps"
   account  = "bz91243.eu-west-2.aws"
   role     = "ACCOUNTADMIN"
-  password = "Seguridad199725@"
+  password = var.snowflake_password
 }
 
 module "snowflake_resources" {

@@ -22,7 +22,7 @@ provider "snowflake" {
   account  = "bz91243.eu-west-2.aws"
   role     = "ACCOUNTADMIN"
   #private_key = var.snowflake_private_key
-  password = "Seguridad199725@"
+  password = var.snowflake_password
 }
 
 module "snowflake_resources" {

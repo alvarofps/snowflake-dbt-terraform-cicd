@@ -8,8 +8,8 @@ variable "env_name" {
   default = "PROD"
 }
 
-# variable "snowflake_user_password" {
-#   type        = string
-#   description = "Password for the user to access Snowflake"
-#   sensitive   = true
-# }
+variable "snowflake_password" {
+  type        = string
+  description = "User password used to access Snowflake"
+  sensitive   = true
+}
