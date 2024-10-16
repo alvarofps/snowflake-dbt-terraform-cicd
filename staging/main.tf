@@ -2,26 +2,26 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "0.63.0"
+      version = "0.66.1"
     }
   }
 
   backend "s3" {
-    bucket         = "dev-sk-terraform-state-bucket"
-    key            = "terraform-staging.tfstate"
-    region         = "eu-west-2"
+    bucket = "sk-terraform-state-bucket-prod"
+    key    = "terraform-staging.tfstate"
+    region = "eu-west-2"
     # Optional DynamoDB for state locking. See https://developer.hashicorp.com/terraform/language/settings/backends/s3 for details.
     # dynamodb_table = "terraform-state-lock-table"
-    encrypt        = true
-    role_arn       = "arn:aws:iam::339712836592:role/terraform-backend-acess-role"
+    encrypt  = true
+    role_arn = "arn:aws:iam::339712836592:role/terraform-backend-acess-role"
   }
 }
 
 provider "snowflake" {
-  username    = "alvarofps"
-  account     = "https://bz91243.eu-west-2.aws.snowflakecomputing.com"
-  role        = "ACCOUNTADMIN"
-  private_key = var.snowflake_private_key
+  username = "alvarofps"
+  account  = "bz91243.eu-west-2.aws"
+  role     = "ACCOUNTADMIN"
+  password = var.snowflake_password
 }
 
 module "snowflake_resources" {
